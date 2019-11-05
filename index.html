@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bubble Sort</title>
+</head>
+<body>
+  
+    <style>
+          .container{
+            width: 80%;
+            height: 80%;
+            margin: 50px auto;
+          }
+        h1{
+            width: 80%;
+            color:#694c1f;
+            margin: 30px auto;
+            text-align:center;
+        }
+        input{
+            width: 60%;
+            height: 50px;
+            padding: 10px;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 10px;
+            border: 1px solid #bf8e43;
+        }
+        button{
+            width: 30%;
+            height: 50px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #bf8e43;
+background-color: rgba(105, 76, 31, 0.1);
+color: #bf8e43;
+text-transform: uppercase;
+display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        outline: none;
+        }
+        button:hover{
+            border: 2px solid #694c1f;
+            color: #694c1f;
+            font-weight: bold;
+        }
+        #arrayForSort{
+            display: flex;
+        align-items: center;
+        justify-content: flex-start;   
+        }
+    #arrayForSort span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #bf8e43;
+        min-width: 50px;
+        width: max-content;
+        padding: 5px;
+        min-height: 60px;
+        margin: 5px;
+        transition: all 1s;
+        border-radius: 10px;
+    }
+    .input_block{
+        display: flex;
+        align-items: center;
+        justify-content: space-around; 
+    }
+    </style>
+    <div class="container">
+            <h1>Bubble Sort</h1>
+          <div class="input_block"><input type="text"   value="Please, write array:"  onfocus="this.value=''"> 
+            <button onclick="getsortarray()">sort</button></div>  
+            <p id="arrayForSort"></p>
+    </div>
+
+
+
+    <script>
+
+function getsortarray (){
+    arrayForSort.innerText = "";
+    let text = document.getElementsByTagName("input")[0].value;
+    let arr = text.replace(/\s/g, '').split(','); 
+   arr.forEach(function(item){
+item = +item;
+let span = document.createElement("span");
+span.innerText = item;
+arrayForSort.appendChild(span)
+    })
+let spanarray = document.querySelectorAll("#arrayForSort span");
+console.log(spanarray)
+    /*sort array start*/
+   let len = arr.length;    
+    for (let i = 0; i < len ; i++) {
+     
+        (function(i){ window.setTimeout(function(){
+            spanarray.forEach(item => {item.style.color = "black"; item.style.background = "white";})
+        spanarray[i].style.color = "red"; 
+        spanarray[i].style.background = "rgba(105, 76, 31, 0.1)"; 
+        spanarray[i+1].style.color = "yellow"; 
+        spanarray[i+1].style.background = "rgba(105, 76, 31, 0.1)";
+      for(var j = 0 ; j < len  - 1; j++){ 
+
+        (function(j){ window.setTimeout(function(){
+            spanarray.forEach(item => {item.style.color = "black"; item.style.background = "white";})
+        spanarray[j].style.color = "red"; 
+        spanarray[j].style.background = "rgba(105, 76, 31, 0.1)"; 
+        spanarray[j+1].style.color = "yellow"; 
+        spanarray[j+1].style.background = "rgba(105, 76, 31, 0.1)"; 
+    arr[j] = +arr[j];
+          arr[j + 1] = +arr[j + 1];
+           if (arr[j] > arr[j + 1]) {  
+            spanarray[j].style.color = "red"; 
+        spanarray[j].style.background = "black"; 
+        spanarray[j+1].style.color = "yellow"; 
+        spanarray[j+1].style.background = "black";           
+        var temp = arr[j];
+        arr[j] = arr[j+1];
+        spanarray[j].innerText = arr[j+1];
+        arr[j + 1] = temp;
+        
+        spanarray[j + 1].innerText = temp;
+       spanarray.forEach(item => {item.style.color = "black"; item.style.background = "white";})
+        spanarray[j].style.color = "red"; 
+        spanarray[j].style.background = "black"; 
+        spanarray[j+1].style.color = "red"; 
+        spanarray[j+1].style.background = "black"; 
+
+}
+}, j * 5000); }(j));
+         
+      }
+      p.style.opacity = 0;
+      arrNew.innerText = "";
+      arrNew.innerText = arr;
+      p.style.opacity = 1;
+      spanarray.forEach(item => {item.style.color = "black"; item.style.background = "white";})
+        spanarray[i].style.color = "red"; 
+        spanarray[i].style.background = "rgba(105, 76, 31, 0.1)"; 
+        spanarray[j+1].style.color = "yellow"; 
+        spanarray[j+1].style.background = "rgba(105, 76, 31, 0.1)";
+    }, i * 5000);}(i));
+
+}    
+spanarray.forEach(item => {item.style.color = "black"; item.style.background = "white";})   
+p.style.opacity = 1;  
+}
+/*6, 2, 1, 9, 11, 132, 15, 8*/
+
+   
+
+    </script>
+</body>
+</html>
